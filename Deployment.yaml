@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: super-sudoku
+  namespace: super-sudoku
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: super-sudoku
+  template:
+    metadata:
+      labels:
+        app: super-sudoku
+    spec:
+      containers:
+        - name: super-sudoku
+          image: 116981777568.dkr.ecr.us-east-1.amazonaws.com/myfirstecr:1
+          ports:
+            - containerPort: 80
