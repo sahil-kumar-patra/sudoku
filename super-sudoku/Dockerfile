@@ -10,6 +10,6 @@ ADD . /app/
 RUN npm run build
 
 FROM nginx:1.25.3-alpine-slim
-this is my docker file
+
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
